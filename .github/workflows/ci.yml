@@ -5,9 +5,18 @@ on:
     branches: [main]
   pull_request:
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
   verify:
+    name: Máy gác + lint + typecheck + test + build
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -22,9 +31,37 @@ jobs:
 
       # Máy gác chạy TRƯỚC: hỏng kiến trúc hoặc hardcode màu thì báo ngay,
       # không phải chờ hết build mới biết.
-      - run: pnpm guard
+      - name: Máy gác
+        run: pnpm guard
 
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build
+
+  changeset:
+    name: Nhắc viết changeset
+    runs-on: ubuntu-latest
+    # Chỉ chạy trên PR, và bỏ qua chính PR version do bot mở.
+    if: github.event_name == 'pull_request' && github.actor != 'github-actions[bot]'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # Sửa package mà quên changeset thì thay đổi sẽ không bao giờ được phát hành —
+      # lỗi im lặng, chỉ lộ ra khi app nâng version mà không thấy gì đổi.
+      # Cảnh báo chứ không chặn: có PR chỉ sửa docs hoặc CI, không cần changeset.
+      - name: Kiểm tra có changeset chưa
+        continue-on-error: true
+        run: pnpm changeset status --since=origin/main

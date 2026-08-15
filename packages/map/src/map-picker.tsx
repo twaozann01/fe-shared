@@ -1,4 +1,4 @@
-import { cn } from '@twaozann/ui';
+import { cn } from '@twaozann01/ui';
 import { useEffect, useMemo } from 'react';
 import { MapContainer, Marker, TileLayer, useMap, useMapEvents } from 'react-leaflet';
 import {

@@ -1,10 +1,10 @@
-# @twaozann/filters
+# @twaozann01/filters
 
 Bộ control lọc danh sách: tìm kiếm có debounce, dropdown, chọn nhiều, khoảng số, khoảng ngày, ba trạng thái, sắp xếp.
 
 ## Tầng
 
-**L2** — import `@twaozann/ui` (L1).
+**L2** — import `@twaozann01/ui` (L1).
 
 ## Consumer
 

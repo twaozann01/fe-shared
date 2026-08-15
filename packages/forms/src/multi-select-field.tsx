@@ -1,4 +1,4 @@
-import { MultiSelect, type MultiSelectOption } from '@twaozann/ui';
+import { MultiSelect, type MultiSelectOption } from '@twaozann01/ui';
 import type { ReactNode } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { FormField } from './form-field';

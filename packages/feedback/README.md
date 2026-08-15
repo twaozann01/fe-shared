@@ -1,10 +1,10 @@
-# @twaozann/feedback
+# @twaozann01/feedback
 
 Trạng thái toàn trang: bắt lỗi render, 404, 403, và trang giữ chỗ cho tính năng chưa xong.
 
 ## Tầng
 
-**L2** — import `@twaozann/ui` (L1).
+**L2** — import `@twaozann01/ui` (L1).
 
 ## Consumer
 

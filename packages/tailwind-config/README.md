@@ -1,6 +1,6 @@
-# @twaozann/tailwind-config
+# @twaozann01/tailwind-config
 
-Preset Tailwind nối class tiện dụng (`bg-primary`, `text-muted-foreground`) với CSS variable của `@twaozann/design-tokens`.
+Preset Tailwind nối class tiện dụng (`bg-primary`, `text-muted-foreground`) với CSS variable của `@twaozann01/design-tokens`.
 
 ## Tầng
 
@@ -8,13 +8,13 @@ Preset Tailwind nối class tiện dụng (`bg-primary`, `text-muted-foreground`
 
 ## Consumer
 
-Mọi app web dùng Tailwind. Zalo Mini App (zmp-ui) và React Native **không** dùng package này — chúng lấy màu trực tiếp từ `@twaozann/design-tokens`.
+Mọi app web dùng Tailwind. Zalo Mini App (zmp-ui) và React Native **không** dùng package này — chúng lấy màu trực tiếp từ `@twaozann01/design-tokens`.
 
 ## Public API
 
 ```ts
 // tailwind.config.ts của app
-import preset from '@twaozann/tailwind-config';
+import preset from '@twaozann01/tailwind-config';
 
 export default {
   presets: [preset],

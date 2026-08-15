@@ -1,11 +1,13 @@
 {
-  "name": "@twaozann/ui",
+  "name": "@twaozann01/ui",
   "version": "0.1.0",
   "description": "Primitives giao diện dùng chung — nút, thẻ, bảng, hộp thoại, control nhập liệu. Không chứa nghiệp vụ.",
   "license": "UNLICENSED",
   "type": "module",
   "sideEffects": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -13,7 +15,8 @@
     }
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "twaozann": {
     "layer": "L1"
@@ -47,8 +50,8 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
-    "@twaozann/eslint-config": "workspace:*",
-    "@twaozann/typescript-config": "workspace:*",
+    "@twaozann01/eslint-config": "workspace:*",
+    "@twaozann01/typescript-config": "workspace:*",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "jsdom": "^25.0.1",
@@ -57,5 +60,14 @@
     "tsup": "^8.3.0",
     "typescript": "^5.6.0",
     "vitest": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twaozann01/fe-shared.git",
+    "directory": "packages/ui"
+  },
+  "homepage": "https://github.com/twaozann01/fe-shared/tree/main/packages/ui#readme",
+  "bugs": {
+    "url": "https://github.com/twaozann01/fe-shared/issues"
   }
 }

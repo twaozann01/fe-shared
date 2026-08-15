@@ -1,9 +1,13 @@
 {
-  "name": "twaozann-shared",
+  "name": "fe-shared",
   "version": "0.0.0",
   "private": true,
-  "description": "Design system dùng chung cho các FE web của twaozann — publish dưới scope @twaozann/*. Chỉ giao diện, không nghiệp vụ.",
+  "description": "Design system dùng chung cho các FE web — publish dưới scope @twaozann01/*. Chỉ giao diện, không nghiệp vụ.",
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twaozann01/fe-shared.git"
+  },
   "engines": {
     "node": ">=20"
   },
@@ -13,7 +17,7 @@
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
     "lint": "turbo run lint",
-    "storybook": "pnpm --filter @twaozann/storybook dev",
+    "storybook": "pnpm --filter @twaozann01/storybook dev",
     "guard": "pnpm guard:layers && pnpm guard:hardcode && pnpm guard:junk",
     "guard:layers": "node scripts/check-layer-boundaries.mjs",
     "guard:hardcode": "node scripts/check-hardcode.mjs",
@@ -21,13 +25,13 @@
     "verify": "pnpm guard && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
     "changeset": "changeset",
     "version-packages": "changeset version && pnpm install --lockfile-only",
-    "release": "pnpm verify && changeset publish",
+    "release": "changeset publish",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.0",
-    "@twaozann/eslint-config": "workspace:*",
+    "@twaozann01/eslint-config": "workspace:*",
     "eslint": "^9.12.0",
     "prettier": "^3.3.3",
     "turbo": "^2.3.0",

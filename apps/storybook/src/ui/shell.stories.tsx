@@ -1,4 +1,4 @@
-import { Button, ImageUpload, LanguageSwitcher, MobileDrawer, ThemeToggle } from '@twaozann/ui';
+import { Button, ImageUpload, LanguageSwitcher, MobileDrawer, ThemeToggle } from '@twaozann01/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 

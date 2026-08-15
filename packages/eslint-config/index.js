@@ -6,7 +6,7 @@ import tseslint from 'typescript-eslint';
 
 /**
  * Flat config dùng chung. Package con:
- *   import config from '@twaozann/eslint-config';
+ *   import config from '@twaozann01/eslint-config';
  *   export default config;
  */
 export default tseslint.config(

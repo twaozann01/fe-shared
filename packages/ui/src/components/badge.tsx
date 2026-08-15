@@ -6,7 +6,7 @@ import { cn } from '../lib/cn';
 // KHÔNG biết domain: app tự map trạng thái nghiệp vụ của mình sang variant.
 //
 // Ba variant success/warning/info dùng token ngữ nghĩa (--success…), không dùng palette thô
-// của Tailwind — đổi sắc độ chỉ cần sửa @twaozann/design-tokens một chỗ.
+// của Tailwind — đổi sắc độ chỉ cần sửa @twaozann01/design-tokens một chỗ.
 const badgeVariants = cva(
   'inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-medium transition-colors focus:outline-none',
   {

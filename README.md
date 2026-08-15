@@ -1,7 +1,12 @@
-# twaozann-shared
+# fe-shared
+
+[![CI](https://github.com/twaozann01/fe-shared/actions/workflows/ci.yml/badge.svg)](https://github.com/twaozann01/fe-shared/actions/workflows/ci.yml)
+[![Release](https://github.com/twaozann01/fe-shared/actions/workflows/release.yml/badge.svg)](https://github.com/twaozann01/fe-shared/actions/workflows/release.yml)
 
 > Design system dùng chung cho các FE web. **Chỉ giao diện** — không http, không nghiệp vụ.
 > Mục tiêu: sửa một chỗ là mọi app đổi theo.
+>
+> Publish dưới scope `@twaozann01/*` trên GitHub Packages.
 
 ## Bản đồ tầng
 
@@ -40,12 +45,12 @@ pnpm verify         # chạy trọn bộ kiểm tra
 ## Dùng trong một app
 
 ```bash
-pnpm add @twaozann/design-tokens @twaozann/ui @twaozann/forms
+pnpm add @twaozann01/design-tokens @twaozann01/ui @twaozann01/forms
 ```
 
 ```ts
 // tailwind.config.ts
-import preset from '@twaozann/tailwind-config';
+import preset from '@twaozann01/tailwind-config';
 
 export default {
   presets: [preset],
@@ -57,7 +62,7 @@ export default {
 
 ```tsx
 // main.tsx
-import '@twaozann/design-tokens/tokens.css';
+import '@twaozann01/design-tokens/tokens.css';
 
 <ThemeProvider defaultTheme="system">
   <UIProvider labels={{ table: { empty: t('table.empty') } }} translateError={(k) => t(k)}>
@@ -71,7 +76,7 @@ import '@twaozann/design-tokens/tokens.css';
 1. Sửa giá trị trong `packages/design-tokens/src/tokens.ts` — đây là **nguồn chân lý duy nhất**; `tokens.css` được sinh tự động lúc build.
 2. `pnpm changeset` → ghi một dòng mô tả thay đổi.
 3. `pnpm release`.
-4. App chạy `pnpm up @twaozann/design-tokens`.
+4. App chạy `pnpm up @twaozann01/design-tokens`.
 
 Xong. Không sửa dòng code nào trong app mà button, badge, ring, link, bảng đều đổi màu — cả light lẫn dark.
 
@@ -81,12 +86,58 @@ Xong. Không sửa dòng code nào trong app mà button, badge, ring, link, bả
 
 Dấu hiệu nhận biết: nếu một thứ phải import kiểu dữ liệu hay hằng số của một domain cụ thể, nó thuộc về app chứ không phải design system.
 
-Zalo Mini App (`zmp-ui`) và React Native **không dùng được component** ở đây vì chúng không chạy Tailwind/DOM — nhưng vẫn dùng chung được **màu** qua `lightColors` / `darkColors` của `@twaozann/design-tokens`.
+Zalo Mini App (`zmp-ui`) và React Native **không dùng được component** ở đây vì chúng không chạy Tailwind/DOM — nhưng vẫn dùng chung được **màu** qua `lightColors` / `darkColors` của `@twaozann01/design-tokens`.
 
 ## Thêm package mới
 
 Không tự thêm. Package mới phải được cấp chỗ trong kiến trúc trước: bổ sung vào bảng tầng ở README này, khai `twaozann.layer` trong `package.json`, rồi mới tạo thư mục. `guard:layers` sẽ chặn nếu làm ngược lại.
 
-## Publish
+## Phát hành
 
-Scope hiện tại là `@twaozann/*`. GitHub Packages **bắt buộc scope trùng tên chủ repo**, nên nếu publish dưới tài khoản `twaozann01` thì phải đổi scope thành `@twaozann01/*` và bỏ comment hai dòng registry trong `.npmrc`.
+Đi qua **hai nhịp**, cả hai đều tự động — không ai publish thẳng từ máy cá nhân.
+
+```
+sửa code + pnpm changeset  →  merge vào main
+        ↓
+release.yml thấy có changeset  →  mở PR "chore: version packages"
+        ↓                            (tăng version + viết CHANGELOG)
+      merge PR đó
+        ↓
+release.yml thấy hết changeset  →  pnpm verify  →  changeset publish  →  gắn git tag
+```
+
+Nhịp đầu cho anh **xem trước** version mới và CHANGELOG trong một PR, thay vì phát hiện sau khi đã lên registry — npm không cho publish đè cùng một version, nên sai là phải bump số.
+
+### Viết changeset
+
+```bash
+pnpm changeset      # chọn package + mức tăng (patch/minor/major) + mô tả
+git add .changeset && git commit
+```
+
+CI có một job nhắc nếu PR sửa package mà quên changeset. Nó **cảnh báo chứ không chặn** — PR chỉ sửa docs hoặc CI thì không cần.
+
+Mọi package tăng version **cùng nhau** (`fixed` trong `.changeset/config.json`): một dòng version duy nhất cho cả bộ, app không phải nhớ `ui@2.1` hợp với `forms@1.7` hay `forms@1.8`.
+
+### Dùng package đã publish trong app khác
+
+GitHub Packages cần xác thực **kể cả với package public**. Trong app tiêu dùng, tạo `.npmrc`:
+
+```
+@twaozann01:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+```
+
+rồi đặt `NODE_AUTH_TOKEN` bằng một Personal Access Token có scope `read:packages`. **Không commit token** — để nó ở biến môi trường hoặc `~/.npmrc`.
+
+```bash
+pnpm add @twaozann01/ui @twaozann01/design-tokens @twaozann01/forms
+```
+
+### Lưu ý về scope
+
+GitHub Packages **bắt buộc scope npm trùng tên chủ repo**. Chủ repo là `twaozann01` nên scope là `@twaozann01/*`. Muốn tên gọn hơn (`@twaozann/*`) thì phải tạo một GitHub **organization** tên `twaozann` và chuyển repo sang đó — không có cách nào khác.
+
+### Trong lúc phát triển
+
+Không cần publish sau mỗi lần sửa. Dùng `pnpm link` (hoặc `overrides` trỏ đường dẫn) để app đọc thẳng `dist` trong máy, publish chỉ khi thật sự muốn phát hành.

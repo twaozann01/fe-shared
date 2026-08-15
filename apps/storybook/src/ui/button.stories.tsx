@@ -1,4 +1,4 @@
-import { Button } from '@twaozann/ui';
+import { Button } from '@twaozann01/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Plus } from 'lucide-react';
 

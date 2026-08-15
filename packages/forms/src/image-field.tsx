@@ -1,4 +1,4 @@
-import { ImageUpload } from '@twaozann/ui';
+import { ImageUpload } from '@twaozann01/ui';
 import type { ReactNode } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { FormField } from './form-field';

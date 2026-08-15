@@ -8,8 +8,8 @@ import {
   SwitchField,
   TextField,
   TextareaField,
-} from '@twaozann/forms';
-import { Button, UIProvider } from '@twaozann/ui';
+} from '@twaozann01/forms';
+import { Button, UIProvider } from '@twaozann01/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import { useForm } from 'react-hook-form';
 

@@ -1,11 +1,14 @@
 {
-  "name": "@twaozann/tailwind-config",
+  "name": "@twaozann01/tailwind-config",
   "version": "0.1.0",
-  "description": "Preset Tailwind nối class với token của @twaozann/design-tokens.",
+  "description": "Preset Tailwind nối class với token của @twaozann01/design-tokens.",
   "license": "UNLICENSED",
   "main": "./index.js",
   "types": "./index.d.ts",
-  "files": ["index.js", "index.d.ts"],
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
   "exports": {
     ".": {
       "types": "./index.d.ts",
@@ -13,7 +16,8 @@
     }
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "twaozann": {
     "layer": "L0"
@@ -31,10 +35,19 @@
     "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
-    "@twaozann/eslint-config": "workspace:*",
-    "@twaozann/typescript-config": "workspace:*",
+    "@twaozann01/eslint-config": "workspace:*",
+    "@twaozann01/typescript-config": "workspace:*",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.6.0",
     "vitest": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twaozann01/fe-shared.git",
+    "directory": "packages/tailwind-config"
+  },
+  "homepage": "https://github.com/twaozann01/fe-shared/tree/main/packages/tailwind-config#readme",
+  "bugs": {
+    "url": "https://github.com/twaozann01/fe-shared/issues"
   }
 }

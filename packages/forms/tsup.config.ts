@@ -6,5 +6,5 @@ export default defineConfig({
   dts: true,
   clean: true,
   treeshake: true,
-  external: ['react', 'react-dom', 'react-hook-form', '@twaozann/ui'],
+  external: ['react', 'react-dom', 'react-hook-form', '@twaozann01/ui'],
 });

@@ -1,4 +1,4 @@
-import { cn } from '@twaozann/ui';
+import { cn } from '@twaozann01/ui';
 import type { ReactNode } from 'react';
 
 export interface StatusPageProps {

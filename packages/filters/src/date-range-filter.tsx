@@ -1,4 +1,4 @@
-import { cn, Input, useUILabels } from '@twaozann/ui';
+import { cn, Input, useUILabels } from '@twaozann01/ui';
 
 export interface DateRangeValue {
   /** ISO 'yyyy-mm-dd'. */

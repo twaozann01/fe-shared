@@ -1,4 +1,4 @@
-import { Badge } from '@twaozann/ui';
+import { Badge } from '@twaozann01/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

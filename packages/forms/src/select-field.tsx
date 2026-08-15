@@ -1,4 +1,4 @@
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@twaozann/ui';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@twaozann01/ui';
 import type { ReactNode } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { FormField } from './form-field';

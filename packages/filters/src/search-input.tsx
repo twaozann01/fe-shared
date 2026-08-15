@@ -1,4 +1,4 @@
-import { cn, Input, useDebounce, useUILabels } from '@twaozann/ui';
+import { cn, Input, useDebounce, useUILabels } from '@twaozann01/ui';
 import { Search } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 

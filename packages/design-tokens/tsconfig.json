@@ -1,4 +1,4 @@
 {
-  "extends": "@twaozann/typescript-config/base.json",
+  "extends": "@twaozann01/typescript-config/base.json",
   "include": ["src"]
 }

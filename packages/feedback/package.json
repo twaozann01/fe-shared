@@ -1,11 +1,13 @@
 {
-  "name": "@twaozann/feedback",
+  "name": "@twaozann01/feedback",
   "version": "0.1.0",
   "description": "Trạng thái toàn trang: bắt lỗi render, 404, 403, tính năng đang phát triển.",
   "license": "UNLICENSED",
   "type": "module",
   "sideEffects": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -13,7 +15,8 @@
     }
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "twaozann": {
     "layer": "L2"
@@ -25,7 +28,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@twaozann/ui": "workspace:*"
+    "@twaozann01/ui": "workspace:*"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
@@ -34,8 +37,8 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
-    "@twaozann/eslint-config": "workspace:*",
-    "@twaozann/typescript-config": "workspace:*",
+    "@twaozann01/eslint-config": "workspace:*",
+    "@twaozann01/typescript-config": "workspace:*",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "jsdom": "^25.0.1",
@@ -44,5 +47,14 @@
     "tsup": "^8.3.0",
     "typescript": "^5.6.0",
     "vitest": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twaozann01/fe-shared.git",
+    "directory": "packages/feedback"
+  },
+  "homepage": "https://github.com/twaozann01/fe-shared/tree/main/packages/feedback#readme",
+  "bugs": {
+    "url": "https://github.com/twaozann01/fe-shared/issues"
   }
 }

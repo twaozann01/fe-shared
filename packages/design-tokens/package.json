@@ -1,11 +1,15 @@
 {
-  "name": "@twaozann/design-tokens",
+  "name": "@twaozann01/design-tokens",
   "version": "0.1.0",
   "description": "Nguồn chân lý DUY NHẤT của màu, bo góc và bán kính cho mọi app. Xuất CSS variables cho web và giá trị JS cho Zalo Mini App / React Native.",
   "license": "UNLICENSED",
   "type": "module",
-  "sideEffects": ["*.css"],
-  "files": ["dist"],
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -14,7 +18,8 @@
     "./tokens.css": "./dist/tokens.css"
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "twaozann": {
     "layer": "L0"
@@ -26,10 +31,19 @@
     "lint": "eslint src"
   },
   "devDependencies": {
-    "@twaozann/eslint-config": "workspace:*",
-    "@twaozann/typescript-config": "workspace:*",
+    "@twaozann01/eslint-config": "workspace:*",
+    "@twaozann01/typescript-config": "workspace:*",
     "tsup": "^8.3.0",
     "typescript": "^5.6.0",
     "vitest": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twaozann01/fe-shared.git",
+    "directory": "packages/design-tokens"
+  },
+  "homepage": "https://github.com/twaozann01/fe-shared/tree/main/packages/design-tokens#readme",
+  "bugs": {
+    "url": "https://github.com/twaozann01/fe-shared/issues"
   }
 }

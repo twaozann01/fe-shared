@@ -1,4 +1,4 @@
-import { Badge, DataTable, Pagination, type Column } from '@twaozann/ui';
+import { Badge, DataTable, Pagination, type Column } from '@twaozann01/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 

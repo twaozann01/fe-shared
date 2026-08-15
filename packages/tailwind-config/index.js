@@ -2,10 +2,10 @@
  * Preset Tailwind dùng chung.
  *
  * App chỉ cần:
- *   presets: [require('@twaozann/tailwind-config')]
- *   content: ['./src/**\/*.{ts,tsx}', ...require('@twaozann/tailwind-config').sharedContent]
+ *   presets: [require('@twaozann01/tailwind-config')]
+ *   content: ['./src/**\/*.{ts,tsx}', ...require('@twaozann01/tailwind-config').sharedContent]
  *
- * Mọi màu đều trỏ vào CSS variable của @twaozann/design-tokens, KHÔNG viết giá trị màu ở đây —
+ * Mọi màu đều trỏ vào CSS variable của @twaozann01/design-tokens, KHÔNG viết giá trị màu ở đây —
  * nếu viết ở cả hai nơi thì sẽ có ngày lệch nhau.
  *
  * `<alpha-value>` là chỗ Tailwind thay số alpha khi bạn viết `bg-primary/15`.
@@ -20,11 +20,11 @@ const pair = (name) => ({
 
 /** Glob trỏ vào dist của các package UI — app phải thêm vào `content`, nếu không class sẽ bị purge mất. */
 const sharedContent = [
-  './node_modules/@twaozann/ui/dist/**/*.{js,mjs}',
-  './node_modules/@twaozann/forms/dist/**/*.{js,mjs}',
-  './node_modules/@twaozann/filters/dist/**/*.{js,mjs}',
-  './node_modules/@twaozann/feedback/dist/**/*.{js,mjs}',
-  './node_modules/@twaozann/map/dist/**/*.{js,mjs}',
+  './node_modules/@twaozann01/ui/dist/**/*.{js,mjs}',
+  './node_modules/@twaozann01/forms/dist/**/*.{js,mjs}',
+  './node_modules/@twaozann01/filters/dist/**/*.{js,mjs}',
+  './node_modules/@twaozann01/feedback/dist/**/*.{js,mjs}',
+  './node_modules/@twaozann01/map/dist/**/*.{js,mjs}',
 ];
 
 /** @type {import('tailwindcss').Config} */

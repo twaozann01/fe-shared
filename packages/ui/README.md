@@ -1,10 +1,10 @@
-# @twaozann/ui
+# @twaozann01/ui
 
 Primitives giao diện: nút, thẻ, bảng, hộp thoại, và toàn bộ control nhập liệu.
 
 ## Tầng
 
-**L1** — chỉ import `@twaozann/design-tokens` (gián tiếp, qua class Tailwind). Không import package L2 nào.
+**L1** — chỉ import `@twaozann01/design-tokens` (gián tiếp, qua class Tailwind). Không import package L2 nào.
 
 ## Consumer
 
@@ -18,7 +18,7 @@ Xem `src/index.ts` — chỉ những gì xuất ở đó mới là hợp đồng
 
 ```tsx
 // main.tsx
-import '@twaozann/design-tokens/tokens.css';
+import '@twaozann01/design-tokens/tokens.css';
 
 <ThemeProvider defaultTheme="system">
   <UIProvider
@@ -49,7 +49,7 @@ const { theme, resolvedTheme, setTheme, toggleTheme } = useTheme();
 **Chống nháy trắng lúc tải trang.** Không có bước này, trang hiện nền sáng một nhịp rồi mới nhảy sang tối. Dán script vào `<head>` của `index.html`, trước khi React chạy:
 
 ```ts
-import { getThemeInitScript } from '@twaozann/ui';
+import { getThemeInitScript } from '@twaozann01/ui';
 console.log(getThemeInitScript()); // chép chuỗi này vào <script> trong index.html
 ```
 
@@ -122,6 +122,6 @@ if (await confirm({ description: 'Xoá đơn này?', destructive: true })) {
 ## Khi nào KHÔNG dùng
 
 - **Đừng nhét component có nghiệp vụ vào đây** (`OrderStatusBadge`, `RepairmanCard`…). Chúng thuộc app. Dấu hiệu nhận biết: component phải import kiểu dữ liệu hay hằng số của một domain cụ thể.
-- **Đừng import `@twaozann/forms` / `filters` / `map`** từ package này — dep ngược tầng, `guard:layers` sẽ chặn.
+- **Đừng import `@twaozann01/forms` / `filters` / `map`** từ package này — dep ngược tầng, `guard:layers` sẽ chặn.
 - **Đừng hardcode màu.** Viết `bg-primary`, `text-muted-foreground`, không viết `bg-[#3b82f6]` hay `bg-blue-500`. `guard:hardcode` sẽ chặn.
 - **Đừng thêm thư viện toast/router/i18n vào dependencies.** Nếu thấy cần, gần như chắc chắn thứ đó phải do app truyền vào qua props hoặc `UIProvider`.

@@ -1,4 +1,4 @@
-import { Input } from '@twaozann/ui';
+import { Input } from '@twaozann01/ui';
 import type { ComponentProps, ReactNode } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { FormField } from './form-field';

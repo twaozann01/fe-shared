@@ -6,7 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
   useUILabels,
-} from '@twaozann/ui';
+} from '@twaozann01/ui';
 import type { ReactNode } from 'react';
 
 export interface BooleanFilterProps {

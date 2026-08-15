@@ -1,4 +1,4 @@
-import preset from '@twaozann/tailwind-config';
+import preset from '@twaozann01/tailwind-config';
 import type { Config } from 'tailwindcss';
 
 export default {

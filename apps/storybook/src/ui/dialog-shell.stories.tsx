@@ -8,7 +8,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@twaozann/ui';
+} from '@twaozann01/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Wrench } from 'lucide-react';
 import { useState } from 'react';

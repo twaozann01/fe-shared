@@ -1,4 +1,4 @@
-# @twaozann/eslint-config
+# @twaozann01/eslint-config
 
 Flat config ESLint 9 dùng chung cho các package trong repo này.
 
@@ -14,7 +14,7 @@ Mọi package của design system. App tiêu dùng có thể dùng lại, nhưng
 
 ```js
 // eslint.config.js của package
-import config from '@twaozann/eslint-config';
+import config from '@twaozann01/eslint-config';
 export default config;
 ```
 

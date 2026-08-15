@@ -1,4 +1,4 @@
-import { Button, cn, useUILabels } from '@twaozann/ui';
+import { Button, cn, useUILabels } from '@twaozann01/ui';
 import type { ReactNode } from 'react';
 
 export interface FilterBarProps {

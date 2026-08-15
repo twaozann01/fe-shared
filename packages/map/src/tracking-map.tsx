@@ -1,4 +1,4 @@
-import { cn } from '@twaozann/ui';
+import { cn } from '@twaozann01/ui';
 import L from 'leaflet';
 import type { ReactNode } from 'react';
 import { useEffect, useMemo } from 'react';

@@ -6,7 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
   useUILabels,
-} from '@twaozann/ui';
+} from '@twaozann01/ui';
 import { ArrowUpDown } from 'lucide-react';
 import type { FilterOption } from './select-filter';
 

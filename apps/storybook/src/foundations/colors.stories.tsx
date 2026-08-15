@@ -1,5 +1,5 @@
-import { colorTokenNames } from '@twaozann/design-tokens';
-import { Card, CardContent } from '@twaozann/ui';
+import { colorTokenNames } from '@twaozann01/design-tokens';
+import { Card, CardContent } from '@twaozann01/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta = {

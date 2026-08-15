@@ -1,4 +1,4 @@
-import { cn, MultiSelect, useUILabels, type MultiSelectOption } from '@twaozann/ui';
+import { cn, MultiSelect, useUILabels, type MultiSelectOption } from '@twaozann01/ui';
 
 export interface MultiSelectFilterProps {
   value: string[];

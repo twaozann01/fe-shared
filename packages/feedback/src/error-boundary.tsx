@@ -1,4 +1,4 @@
-import { Button, useUILabels } from '@twaozann/ui';
+import { Button, useUILabels } from '@twaozann01/ui';
 import { Component, type ErrorInfo, type ReactNode } from 'react';
 import { StatusPage } from './status-page';
 

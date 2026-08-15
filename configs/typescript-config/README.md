@@ -1,4 +1,4 @@
-# @twaozann/typescript-config
+# @twaozann01/typescript-config
 
 Hai tsconfig gốc dùng chung cho mọi package trong repo.
 
@@ -14,10 +14,10 @@ Mọi package của design system. App tiêu dùng có thể dùng lại nhưng 
 
 ```json
 // tsconfig.json của package không có JSX
-{ "extends": "@twaozann/typescript-config/base.json", "include": ["src"] }
+{ "extends": "@twaozann01/typescript-config/base.json", "include": ["src"] }
 
 // tsconfig.json của package React
-{ "extends": "@twaozann/typescript-config/react-library.json", "include": ["src"] }
+{ "extends": "@twaozann01/typescript-config/react-library.json", "include": ["src"] }
 ```
 
 `base.json` bật `strict` cùng ba luật siết thêm, vì đây là thư viện dùng cho nhiều dự án — kiểu sai lọt ra ngoài thì mọi app tiêu dùng đều chịu:
@@ -31,4 +31,4 @@ Mọi package của design system. App tiêu dùng có thể dùng lại nhưng 
 ## Khi nào KHÔNG dùng
 
 - **Đừng nới lỏng luật ở đây** để một package hết lỗi. Sửa package đó, hoặc nếu thật sự cần thì tắt cục bộ trong `tsconfig.json` của chính nó kèm lý do.
-- **Đừng thêm `paths` alias.** Package trỏ nhau qua tên npm (`@twaozann/ui`), không qua đường dẫn tương đối — nhờ vậy build ra dist mới đúng.
+- **Đừng thêm `paths` alias.** Package trỏ nhau qua tên npm (`@twaozann01/ui`), không qua đường dẫn tương đối — nhờ vậy build ra dist mới đúng.

@@ -1,4 +1,4 @@
-// Public API của @twaozann/ui. Chỉ những gì xuất ở đây mới là hợp đồng với app tiêu dùng;
+// Public API của @twaozann01/ui. Chỉ những gì xuất ở đây mới là hợp đồng với app tiêu dùng;
 // mọi thứ khác trong src/ là chi tiết nội bộ và có thể đổi bất cứ lúc nào.
 
 // Provider + từ điển

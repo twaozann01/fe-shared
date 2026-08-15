@@ -1,4 +1,4 @@
-# @twaozann/design-tokens
+# @twaozann01/design-tokens
 
 Nguồn chân lý duy nhất của bảng màu. Đây là package **quan trọng nhất** của design system: đổi một giá trị ở đây là toàn bộ app đổi theo.
 
@@ -8,13 +8,13 @@ Nguồn chân lý duy nhất của bảng màu. Đây là package **quan trọng
 
 ## Consumer
 
-Mọi app web (qua `tokens.css` + `@twaozann/tailwind-config`), và cả Zalo Mini App / React Native (qua `lightColors` / `darkColors`, vì hai môi trường đó không có CSS variables).
+Mọi app web (qua `tokens.css` + `@twaozann01/tailwind-config`), và cả Zalo Mini App / React Native (qua `lightColors` / `darkColors`, vì hai môi trường đó không có CSS variables).
 
 ## Public API
 
 ```ts
-import { lightTokens, darkTokens, lightColors, darkColors, radius, hsl } from '@twaozann/design-tokens';
-import '@twaozann/design-tokens/tokens.css'; // web: nạp một lần ở entry
+import { lightTokens, darkTokens, lightColors, darkColors, radius, hsl } from '@twaozann01/design-tokens';
+import '@twaozann01/design-tokens/tokens.css'; // web: nạp một lần ở entry
 ```
 
 | Export | Dạng | Dùng ở đâu |

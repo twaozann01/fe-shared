@@ -18,7 +18,7 @@ export interface UIContextValue {
 const fallbackOnError = (message: string): void => {
   // Không kéo `sonner`/toast vào thư viện: mỗi app một hệ thông báo riêng.
   // Chưa nối gì thì ít nhất cũng thấy trong console thay vì im lặng nuốt lỗi.
-  console.warn('[@twaozann/ui]', message);
+  console.warn('[@twaozann01/ui]', message);
 };
 
 const identity = (message: string): string => message;

@@ -1,10 +1,10 @@
-# @twaozann/map
+# @twaozann01/map
 
 Hai bản đồ Leaflet dùng chung: chọn một điểm, và theo dõi một điểm đang di chuyển.
 
 ## Tầng
 
-**L2** — import `@twaozann/ui` (chỉ để lấy `cn`). `leaflet` và `react-leaflet` là **peerDependency**.
+**L2** — import `@twaozann01/ui` (chỉ để lấy `cn`). `leaflet` và `react-leaflet` là **peerDependency**.
 
 ## Consumer
 

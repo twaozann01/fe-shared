@@ -6,5 +6,5 @@ export default defineConfig({
   dts: true,
   clean: true,
   treeshake: true,
-  external: ['react', 'react-dom', '@twaozann/ui'],
+  external: ['react', 'react-dom', '@twaozann01/ui'],
 });

@@ -10,7 +10,7 @@ import {
   ThemeProvider,
   ThemeToggle,
   useTheme,
-} from '@twaozann/ui';
+} from '@twaozann01/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta = {

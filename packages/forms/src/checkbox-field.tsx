@@ -1,4 +1,4 @@
-import { Checkbox, useUI } from '@twaozann/ui';
+import { Checkbox, useUI } from '@twaozann01/ui';
 import type { ReactNode } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import type { FieldRules } from './rules';

@@ -1,7 +1,7 @@
 // NGUỒN CHÂN LÝ DUY NHẤT của bảng màu. Mọi thứ khác được sinh ra từ file này:
 //   - `dist/tokens.css`  (CSS variables cho web)  ← scripts/build-css.mjs sinh ra
 //   - `lightColors` / `darkColors` (chuỗi hsl() dùng cho Zalo Mini App / React Native)
-//   - preset Tailwind trong @twaozann/tailwind-config trỏ vào các biến này
+//   - preset Tailwind trong @twaozann01/tailwind-config trỏ vào các biến này
 //
 // Giá trị là bộ ba HSL KHÔNG có `hsl()` bọc ngoài — đúng dạng Tailwind cần để
 // viết `hsl(var(--primary) / <alpha-value>)`, nhờ vậy `bg-primary/15` mới chạy.

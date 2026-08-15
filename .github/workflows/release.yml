@@ -1,0 +1,96 @@
+name: Release
+
+# Quy trình hai nhịp của changesets:
+#
+#  1. Có changeset chưa phát hành trên `main` → action mở (hoặc cập nhật) PR
+#     "chore: version packages": tăng version, viết CHANGELOG, xoá file changeset.
+#  2. PR đó được merge → lần chạy sau không còn changeset nữa → action chạy
+#     `pnpm release` để publish lên GitHub Packages và gắn git tag.
+#
+# Nhờ vậy việc phát hành luôn đi qua một PR xem được, không ai publish thẳng từ máy cá nhân.
+
+on:
+  push:
+    branches: [main]
+
+# Chỉ một lần chạy tại một thời điểm. Hai lần chạy song song sẽ tranh nhau tạo cùng một PR
+# version, hoặc tệ hơn là publish trùng version.
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write # tạo commit version, gắn tag, đẩy nhánh
+  pull-requests: write # mở PR "version packages"
+  packages: write # publish lên GitHub Packages
+  id-token: write # provenance — chứng minh gói được build từ chính repo này
+
+jobs:
+  release:
+    name: Version hoặc Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Lấy mã nguồn
+        uses: actions/checkout@v4
+        with:
+          # changesets cần đủ lịch sử để biết những gì đã phát hành.
+          fetch-depth: 0
+
+      - name: Cài pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Cài Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          # Sinh .npmrc kèm dòng _authToken lấy từ NODE_AUTH_TOKEN — nhờ vậy token
+          # không bao giờ phải nằm trong repo.
+          registry-url: https://npm.pkg.github.com
+          scope: '@twaozann01'
+
+      - name: Cài phụ thuộc
+        run: pnpm install --frozen-lockfile
+
+      # Chạy lại toàn bộ kiểm tra ngay trước khi publish. CI trên PR đã chạy rồi, nhưng
+      # `main` có thể đã nhận merge khác từ lúc đó — publish là việc không rút lại được
+      # (npm không cho publish đè cùng một version), nên kiểm tra thừa còn hơn thiếu.
+      - name: Máy gác + lint + typecheck + test + build
+        run: pnpm verify
+
+      - name: Mở PR version hoặc publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # Còn changeset → mở PR version. Hết changeset → chạy lệnh này để publish.
+          version: pnpm run version-packages
+          publish: pnpm run release
+          commit: 'chore: version packages'
+          title: 'chore: version packages'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+
+      - name: Tóm tắt
+        if: always()
+        run: |
+          {
+            if [ "${{ steps.changesets.outputs.published }}" = "true" ]; then
+              echo "### Đã publish"
+              echo ""
+              echo '${{ steps.changesets.outputs.publishedPackages }}' \
+                | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{for(const p of JSON.parse(s))console.log('- `'+p.name+'@'+p.version+'`')}catch{console.log('(không đọc được danh sách)')}})"
+              echo ""
+              echo "Xem tại https://github.com/${{ github.repository }}/packages"
+            elif [ -n "${{ steps.changesets.outputs.pullRequestNumber }}" ]; then
+              echo "### Đã mở/cập nhật PR version"
+              echo ""
+              echo "PR #${{ steps.changesets.outputs.pullRequestNumber }} — merge PR đó để phát hành."
+            else
+              echo "### Không có gì để phát hành"
+              echo ""
+              echo "Không tìm thấy changeset nào. Thêm bằng \`pnpm changeset\` rồi commit."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

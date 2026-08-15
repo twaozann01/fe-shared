@@ -1,4 +1,4 @@
-import { useUILabels } from '@twaozann/ui';
+import { useUILabels } from '@twaozann01/ui';
 import type { ReactNode } from 'react';
 
 export interface FeaturePlaceholderProps {

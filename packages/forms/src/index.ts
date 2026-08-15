@@ -12,5 +12,5 @@ export { ImageField, type ImageFieldProps } from './image-field';
 export { CheckboxField, type CheckboxFieldProps } from './checkbox-field';
 export { SwitchField, type SwitchFieldProps } from './switch-field';
 
-// Re-export cho tiện: hai kiểu này thuộc @twaozann/ui nhưng người dùng form luôn cần.
-export type { MultiSelectOption, ImageValue } from '@twaozann/ui';
+// Re-export cho tiện: hai kiểu này thuộc @twaozann01/ui nhưng người dùng form luôn cần.
+export type { MultiSelectOption, ImageValue } from '@twaozann01/ui';

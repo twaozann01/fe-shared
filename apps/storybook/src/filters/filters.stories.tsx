@@ -9,8 +9,8 @@ import {
   SortSelect,
   type DateRangeValue,
   type RangeValue,
-} from '@twaozann/filters';
-import { Card, CardContent } from '@twaozann/ui';
+} from '@twaozann01/filters';
+import { Card, CardContent } from '@twaozann01/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 

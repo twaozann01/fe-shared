@@ -1,16 +1,19 @@
 {
-  "name": "@twaozann/eslint-config",
+  "name": "@twaozann01/eslint-config",
   "version": "0.1.0",
   "description": "Flat config ESLint dùng chung cho các package của design system.",
   "license": "UNLICENSED",
   "type": "module",
   "main": "./index.js",
-  "files": ["index.js"],
+  "files": [
+    "index.js"
+  ],
   "exports": {
     ".": "./index.js"
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "twaozann": {
     "layer": "L0"
@@ -30,5 +33,14 @@
   },
   "peerDependencies": {
     "eslint": "^9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twaozann01/fe-shared.git",
+    "directory": "packages/eslint-config"
+  },
+  "homepage": "https://github.com/twaozann01/fe-shared/tree/main/packages/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/twaozann01/fe-shared/issues"
   }
 }

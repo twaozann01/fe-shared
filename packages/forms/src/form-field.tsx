@@ -1,4 +1,4 @@
-import { cn, useUI } from '@twaozann/ui';
+import { cn, useUI } from '@twaozann01/ui';
 import type { ReactNode } from 'react';
 
 export interface FormFieldProps {

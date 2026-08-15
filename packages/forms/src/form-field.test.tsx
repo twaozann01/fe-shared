@@ -1,4 +1,4 @@
-import { UIProvider } from '@twaozann/ui';
+import { UIProvider } from '@twaozann01/ui';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { FormField } from './form-field';

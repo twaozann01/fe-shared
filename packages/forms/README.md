@@ -1,14 +1,14 @@
-# @twaozann/forms
+# @twaozann01/forms
 
-Field wrapper nối React Hook Form với control của `@twaozann/ui`: nhãn, dấu bắt buộc, dòng lỗi và khoảng cách đồng nhất trên mọi form.
+Field wrapper nối React Hook Form với control của `@twaozann01/ui`: nhãn, dấu bắt buộc, dòng lỗi và khoảng cách đồng nhất trên mọi form.
 
 ## Tầng
 
-**L2** — import `@twaozann/ui` (L1). `react-hook-form` là **peerDependency**, app tự cài.
+**L2** — import `@twaozann01/ui` (L1). `react-hook-form` là **peerDependency**, app tự cài.
 
 ## Consumer
 
-App web có form. Không dùng RHF thì không cần package này — `@twaozann/ui` vẫn dùng độc lập được.
+App web có form. Không dùng RHF thì không cần package này — `@twaozann01/ui` vẫn dùng độc lập được.
 
 ## Public API
 

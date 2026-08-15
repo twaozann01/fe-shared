@@ -1,5 +1,5 @@
-import { MapPicker, TrackingMap, type LatLng } from '@twaozann/map';
-import { Card, CardContent } from '@twaozann/ui';
+import { MapPicker, TrackingMap, type LatLng } from '@twaozann01/map';
+import { Card, CardContent } from '@twaozann01/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import { useEffect, useState } from 'react';
 

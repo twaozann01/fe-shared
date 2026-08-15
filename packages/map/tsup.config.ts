@@ -6,7 +6,7 @@ export default defineConfig({
   dts: true,
   clean: true,
   treeshake: true,
-  external: ['react', 'react-dom', 'leaflet', 'react-leaflet', '@twaozann/ui'],
+  external: ['react', 'react-dom', 'leaflet', 'react-leaflet', '@twaozann01/ui'],
   // Leaflet nạp CSS và ảnh marker qua import — để bundler của app xử lý, không nhúng vào dist.
   loader: { '.png': 'file' },
 });

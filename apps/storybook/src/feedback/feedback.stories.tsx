@@ -1,5 +1,5 @@
-import { ErrorBoundary, FeaturePlaceholder, Forbidden, NotFound } from '@twaozann/feedback';
-import { Button } from '@twaozann/ui';
+import { ErrorBoundary, FeaturePlaceholder, Forbidden, NotFound } from '@twaozann01/feedback';
+import { Button } from '@twaozann01/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import { BarChart3 } from 'lucide-react';
 
