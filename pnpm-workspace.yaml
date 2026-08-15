@@ -1,0 +1,8 @@
+packages:
+  - "packages/*"
+  - "configs/*"
+  - "apps/*"
+
+# esbuild cần chạy script cài đặt để lấy binary — tsup và vite đều dựa vào nó.
+allowBuilds:
+  esbuild: true

@@ -1,0 +1,16 @@
+node_modules/
+dist/
+storybook-static/
+.turbo/
+*.tsbuildinfo
+coverage/
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+*.log
+npm-debug.log*
+pnpm-debug.log*

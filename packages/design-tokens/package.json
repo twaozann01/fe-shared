@@ -1,0 +1,35 @@
+{
+  "name": "@twaozann/design-tokens",
+  "version": "0.1.0",
+  "description": "Nguồn chân lý DUY NHẤT của màu, bo góc và bán kính cho mọi app. Xuất CSS variables cho web và giá trị JS cho Zalo Mini App / React Native.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": ["*.css"],
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./tokens.css": "./dist/tokens.css"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "twaozann": {
+    "layer": "L0"
+  },
+  "scripts": {
+    "build": "tsup && node scripts/build-css.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@twaozann/eslint-config": "workspace:*",
+    "@twaozann/typescript-config": "workspace:*",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}

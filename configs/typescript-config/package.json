@@ -1,0 +1,13 @@
+{
+  "name": "@twaozann/typescript-config",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "files": ["base.json", "react-library.json"],
+  "twaozann": {
+    "layer": "L0"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}

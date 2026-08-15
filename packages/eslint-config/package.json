@@ -1,0 +1,34 @@
+{
+  "name": "@twaozann/eslint-config",
+  "version": "0.1.0",
+  "description": "Flat config ESLint dùng chung cho các package của design system.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "./index.js",
+  "files": ["index.js"],
+  "exports": {
+    ".": "./index.js"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "twaozann": {
+    "layer": "L0"
+  },
+  "scripts": {
+    "build": "echo \"no build step\"",
+    "typecheck": "echo \"no typecheck\"",
+    "test": "echo \"no test\"",
+    "lint": "echo \"self\""
+  },
+  "dependencies": {
+    "@eslint/js": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^15.10.0",
+    "typescript-eslint": "^8.8.0"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  }
+}

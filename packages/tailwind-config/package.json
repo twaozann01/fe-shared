@@ -1,0 +1,40 @@
+{
+  "name": "@twaozann/tailwind-config",
+  "version": "0.1.0",
+  "description": "Preset Tailwind nối class với token của @twaozann/design-tokens.",
+  "license": "UNLICENSED",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "files": ["index.js", "index.d.ts"],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "twaozann": {
+    "layer": "L0"
+  },
+  "scripts": {
+    "build": "echo \"no build step\"",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "@twaozann/eslint-config": "workspace:*",
+    "@twaozann/typescript-config": "workspace:*",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}

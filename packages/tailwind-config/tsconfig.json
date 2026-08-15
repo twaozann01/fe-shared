@@ -1,0 +1,11 @@
+{
+  "extends": "@twaozann/typescript-config/base.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "declaration": false,
+    "declarationMap": false
+  },
+  "include": ["index.js", "index.d.ts"]
+}

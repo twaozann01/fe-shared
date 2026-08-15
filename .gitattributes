@@ -1,0 +1,15 @@
+# Chuẩn hoá xuống dòng: kho lưu LF, checkout ra thì tuỳ hệ điều hành.
+# Không có dòng này thì máy Windows commit CRLF, máy khác thấy cả file bị đổi.
+* text=auto eol=lf
+
+# File khoá do pnpm sinh — đừng để git merge, xung đột trong đó không sửa tay được.
+pnpm-lock.yaml -merge linguist-generated=true
+
+# Ảnh và font là nhị phân.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
