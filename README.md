@@ -8,6 +8,10 @@
 >
 > Publish dưới scope `@twaozann01/*` trên GitHub Packages.
 
+📖 **[Storybook](https://twaozann01.github.io/fe-shared/)** — xem component chạy thật, đổi light/dark, chỉnh props
+📚 **[Tài liệu](docs/README.md)** — [Bắt đầu](docs/01-bat-dau.md) · [Công thức](docs/02-cong-thuc.md) · [Chuyển app cũ](docs/03-chuyen-app-cu.md) · [Đóng góp](docs/04-dong-gop.md) · [Kiến trúc](docs/05-kien-truc.md)
+🔎 **[API Reference](docs/api/README.md)** — bảng props đầy đủ từng component
+
 ## Bản đồ tầng
 
 | Tầng | Package | Luật |

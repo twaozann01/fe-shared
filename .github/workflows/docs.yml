@@ -1,0 +1,62 @@
+name: Docs
+
+# Đưa Storybook lên GitHub Pages. Với một design system thì Storybook CHÍNH LÀ tài liệu:
+# nó cho xem component thật ở mọi trạng thái, đổi được light/dark, chỉnh được props.
+# Để nó chỉ chạy trên máy người viết thì người dùng phải clone + cài + chạy mới xem được —
+# tức là gần như không ai xem.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # bấm tay khi cần dựng lại
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Không huỷ lần chạy đang dở: huỷ giữa chừng có thể để Pages ở trạng thái nửa vời.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Dựng Storybook
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # `turbo run build` dựng package trước rồi mới tới Storybook — Storybook đọc `dist`
+      # của các package, không đọc `src`, nên thứ tự này là bắt buộc.
+      - name: Build
+        run: pnpm build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/storybook/storybook-static
+
+  deploy:
+    name: Xuất bản
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
