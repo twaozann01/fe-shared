@@ -1,6 +1,6 @@
 {
   "name": "@twaozann01/feedback",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Trạng thái toàn trang: bắt lỗi render, 404, 403, tính năng đang phát triển.",
   "license": "UNLICENSED",
   "type": "module",

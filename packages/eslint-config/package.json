@@ -1,6 +1,6 @@
 {
   "name": "@twaozann01/eslint-config",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Flat config ESLint dùng chung cho các package của design system.",
   "license": "UNLICENSED",
   "type": "module",

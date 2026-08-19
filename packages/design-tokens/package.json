@@ -1,6 +1,6 @@
 {
   "name": "@twaozann01/design-tokens",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Nguồn chân lý DUY NHẤT của màu, bo góc và bán kính cho mọi app. Xuất CSS variables cho web và giá trị JS cho Zalo Mini App / React Native.",
   "license": "UNLICENSED",
   "type": "module",

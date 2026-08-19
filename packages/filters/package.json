@@ -1,6 +1,6 @@
 {
   "name": "@twaozann01/filters",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Bộ control lọc danh sách (tìm kiếm, dropdown, khoảng số, khoảng ngày) — controlled, không giữ state.",
   "license": "UNLICENSED",
   "type": "module",
