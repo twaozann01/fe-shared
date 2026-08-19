@@ -107,19 +107,10 @@ export {
   type SheetSide,
   type SheetContentProps,
 } from './components/sheet';
-export {
-  Drawer,
-  DrawerTrigger,
-  DrawerPortal,
-  DrawerClose,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerHeader,
-  DrawerFooter,
-  DrawerTitle,
-  DrawerDescription,
-  type DrawerContentProps,
-} from './components/drawer';
+// `Drawer` CỐ Ý không nằm ở entry này — nó ở '@twaozann01/ui/drawer'.
+// Lý do: nó dựa trên `vaul`, mà `vaul` không khai `sideEffects: false`. Chỉ cần một dòng
+// `import ... from 'vaul'` đứng trong entry chung là bundler của app buộc phải giữ nguyên
+// cả gói, kể cả khi app không dùng Drawer — đo được ~70KB vào chunk vendor.
 export {
   DIALOG_BG_CLASS,
   DIALOG_OVERLAY_CLASS,
@@ -150,11 +141,7 @@ export {
 } from './components/multi-select';
 export { Pagination, getPageItems, type PaginationProps } from './components/pagination';
 export { MobileDrawer, type MobileDrawerProps } from './components/mobile-drawer';
-export {
-  ImageUpload,
-  type ImageValue,
-  type ImageUploadProps,
-} from './components/image-upload';
+export { ImageUpload, type ImageValue, type ImageUploadProps } from './components/image-upload';
 export { ThemeToggle, type ThemeToggleProps } from './components/theme-toggle';
 export {
   LanguageSwitcher,
