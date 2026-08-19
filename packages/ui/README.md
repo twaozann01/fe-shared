@@ -78,7 +78,11 @@ Toàn bộ là hành vi mặc định, app không phải làm gì. `Sheet` và `
 | `DialogShell` | Dialog có khung 3 tầng: header viền dưới · thân tự cuộn · chân viền trên | Có |
 | `AlertDialog` | Cảnh báo buộc chọn một trong hai nút | **Không** (Esc vẫn đóng) |
 | `Sheet` | Panel trượt từ cạnh (trái/phải/trên/dưới) | Có |
-| `Drawer` | Như Sheet nhưng **kéo để đóng** — cử chỉ mobile | Có |
+| `Drawer` | Như Sheet nhưng **kéo để đóng** — cử chỉ mobile. Nhập từ **`@twaozann01/ui/drawer`** | Có |
+
+`Drawer` là cái DUY NHẤT không nằm ở entry chung: nó dựa trên `vaul`, mà `vaul` không khai
+`sideEffects: false` — để nó ở entry chung thì mọi app đều gánh gói đó dù có dùng hay không
+(đo A/B trên một app thật: −12.3 KB raw / −3.2 KB gzip sau khi tách).
 
 Cả năm dùng chung `components/dialog-surface.ts` (nền · lớp mờ · cỡ tiêu đề · cỡ mô tả · 6 hằng cho khung 3 tầng) — cùng vai trò với `field.ts` ở phía control nhập liệu. Sửa một chỗ là cả năm đổi theo, và mở hai cái liên tiếp không thấy lệch nhịp lề.
 

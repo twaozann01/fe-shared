@@ -8,6 +8,7 @@ Primitives giao diện, ba provider, năm họ hộp thoại.
 
 ```ts
 import { Button, Card, Dialog /* … */ } from '@twaozann01/ui';
+import { Drawer } from '@twaozann01/ui/drawer'; // entry riêng — xem mục Drawer
 ```
 
 **Mục lục** · [Provider](#provider) · [Primitives](#primitives) · [Hộp thoại](#hộp-thoại) · [Dữ liệu](#hiển-thị-dữ-liệu) · [Khung app](#khung-app) · [Tiện ích](#tiện-ích)
@@ -221,7 +222,7 @@ Năm họ, **dùng chung một bộ class bề mặt và một ngăn xếp z**. 
 | `DialogShell` | Có header/thân cuộn/chân | Có | Có |
 | `AlertDialog` | Buộc chọn một trong hai nút | **Không** | Có |
 | `Sheet` | Panel trượt từ cạnh | Có | Có |
-| `Drawer` | Kéo để đóng (mobile) | Có | Có |
+| `Drawer` | Kéo để đóng (mobile) — nhập từ `@twaozann01/ui/drawer` | Có | Có |
 
 ## Bốn cái bẫy đã vá sẵn
 
@@ -334,6 +335,13 @@ Trái/phải chiếm hết chiều cao màn (`w-3/4`, trần `sm:max-w-sm`); tr�
 
 ## `Drawer`
 
+> ⚠️ **Nhập từ entry riêng:** `import { Drawer } from '@twaozann01/ui/drawer'` — KHÔNG có ở `@twaozann01/ui`.
+>
+> `vaul` không khai `sideEffects: false`, nên chỉ cần một dòng `import ... from 'vaul'` nằm trong
+> entry chung là bundler của app buộc phải giữ cả gói, kể cả app không dùng Drawer. Đo A/B trên một
+> app thật không dùng Drawer: **−12.3 KB raw / −3.2 KB gzip** sau khi tách. Tách entry là để app nào
+> không dùng thì không phải trả.
+
 Dựng trên [`vaul`](https://github.com/emilkowalski/vaul). Khác `Sheet` đúng một điểm nhưng quan trọng trên điện thoại: **kéo để đóng**.
 
 `Drawer` · `DrawerTrigger` · `DrawerPortal` · `DrawerClose` · `DrawerOverlay` · `DrawerContent` · `DrawerHeader` · `DrawerFooter` · `DrawerTitle` · `DrawerDescription`
@@ -344,7 +352,7 @@ Dựng trên [`vaul`](https://github.com/emilkowalski/vaul). Khác `Sheet` đún
 | `DrawerContent` — `hideHandle` | `boolean` | `false` | Ẩn vạch kéo. **Chỉ ẩn khi đã có cách đóng khác thật rõ** — vạch đó là dấu hiệu thị giác duy nhất cho biết panel kéo được |
 | `DrawerContent` — `overlayClassName` | `string` | | |
 
-Chỉ làm web thì `Sheet` là đủ và nhẹ hơn (không kéo thêm `vaul`).
+Chỉ làm web thì `Sheet` là đủ và nhẹ hơn (không kéo thêm `vaul`) — và `Sheet` nằm sẵn ở entry chung.
 
 ---
 
