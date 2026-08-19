@@ -1,6 +1,6 @@
 {
   "name": "@twaozann01/tailwind-config",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Preset Tailwind nối class với token của @twaozann01/design-tokens.",
   "license": "UNLICENSED",
   "main": "./index.js",

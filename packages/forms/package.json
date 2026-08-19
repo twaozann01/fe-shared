@@ -1,6 +1,6 @@
 {
   "name": "@twaozann01/forms",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Field wrapper nối React Hook Form với control của @twaozann01/ui — nhãn, lỗi, khoảng cách đồng nhất.",
   "license": "UNLICENSED",
   "type": "module",
